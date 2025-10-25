@@ -115,12 +115,6 @@ const retourMonnaie = async (etatDeCaisse, achat) => {
  * Changement de l'extension du fichier .js en .mjs pour qu'il devienne un mo-
  * dule. Ce qui permet d'utiliser await au premier niveau du fichier
  */
-// await retourMonnaie({ ...ETAT_DE_CAISSE_INITIAL }, achatDeBase);
-// await retourMonnaie({ ...ETAT_DE_CAISSE_INITIAL }, achatParfait);
-// await retourMonnaie({ ...ETAT_DE_CAISSE_INITIAL }, achatClientMauvaisEnMaths);
-// await retourMonnaie({ ...ETAT_DE_CAISSE_INITIAL }, achatQuiVideLaTréso);
-// await retourMonnaie({ ...ETAT_DE_CAISSE_INITIAL }, achatPasAssezDeTréso);
-
 console.log("--- 🎬 SCÉNARIO 1 : ACHAT DE BASE ---");
 // On passe une copie de l'état de caisse pour que les scénarios soient indépendants
 await retourMonnaie({ ...ETAT_DE_CAISSE_INITIAL }, achatDeBase);
