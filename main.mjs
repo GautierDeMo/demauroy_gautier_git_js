@@ -134,10 +134,10 @@ const retourMonnaie = async (etatDeCaisse, achat, conversionRates) => {
     // si le client est pas bon en maths
     const montantManquant = achat.montantAchat - achat.montantDonneParClient;
     console.log(`➡️ 🤦‍♂️ Oups, il manque ${montantManquant}€,
-                       ou ${(montantManquant * conversionRates.CHF).toFixed(2)} francs suisses,
-                       ou ${(montantManquant * conversionRates.USD).toFixed(2)}$,
-                       ou ${(montantManquant * conversionRates.GBP).toFixed(2)}£,
-                       ou ${(montantManquant * conversionRates.JPY).toFixed(2)} yens... !`)
+                   ou ${(montantManquant * conversionRates.CHF).toFixed(2)} francs suisses,
+                   ou ${(montantManquant * conversionRates.USD).toFixed(2)}$,
+                   ou ${(montantManquant * conversionRates.GBP).toFixed(2)}£,
+                   ou ${(montantManquant * conversionRates.JPY).toFixed(2)} yens... !`)
     console.log('>');
     console.table(Object.fromEntries(Object.entries(etatDeCaisse).reverse()));
   } else {
@@ -156,17 +156,17 @@ console.log("--- 🎬 SCÉNARIO 1 : ACHAT DE BASE ---");
 await retourMonnaie({ ...ETAT_DE_CAISSE_INITIAL }, achatDeBase, await getAPIData());
 console.log("\n");
 
-// console.log("--- 🎬 SCÉNARIO 2 : ACHAT PARFAIT ---");
-// await retourMonnaie({ ...ETAT_DE_CAISSE_INITIAL }, achatParfait, await getAPIData());
-// console.log("\n");
+console.log("--- 🎬 SCÉNARIO 2 : ACHAT PARFAIT ---");
+await retourMonnaie({ ...ETAT_DE_CAISSE_INITIAL }, achatParfait, await getAPIData());
+console.log("\n");
 
-// console.log("--- 🎬 SCÉNARIO 3 : CLIENT MAUVAIS EN MATHS ---");
-// await retourMonnaie({ ...ETAT_DE_CAISSE_INITIAL }, achatClientMauvaisEnMaths, await getAPIData());
-// console.log("\n");
+console.log("--- 🎬 SCÉNARIO 3 : CLIENT MAUVAIS EN MATHS ---");
+await retourMonnaie({ ...ETAT_DE_CAISSE_INITIAL }, achatClientMauvaisEnMaths, await getAPIData());
+console.log("\n");
 
-// console.log("--- 🎬 SCÉNARIO 4 : PLUS DE TRÉSORERIE ---");
-// await retourMonnaie({ ...ETAT_DE_CAISSE_INITIAL }, achatQuiVideLaTréso, await getAPIData());
-// console.log("\n");
+console.log("--- 🎬 SCÉNARIO 4 : PLUS DE TRÉSORERIE ---");
+await retourMonnaie({ ...ETAT_DE_CAISSE_INITIAL }, achatQuiVideLaTréso, await getAPIData());
+console.log("\n");
 
-// console.log("--- 🎬 SCÉNARIO 5 : PAS ASSEZ DE TRÉSORERIE ---");
-// await retourMonnaie({ ...ETAT_DE_CAISSE_INITIAL }, achatPasAssezDeTréso, await getAPIData());
+console.log("--- 🎬 SCÉNARIO 5 : PAS ASSEZ DE TRÉSORERIE ---");
+await retourMonnaie({ ...ETAT_DE_CAISSE_INITIAL }, achatPasAssezDeTréso, await getAPIData());
